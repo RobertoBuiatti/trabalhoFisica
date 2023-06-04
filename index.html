@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <script src="scrypt.js"></script>
+
+<head>
+    <title>Criar Inputs Dinâmicos</title>
+</head>
+
+<body>
+    <h1>Criar Inputs Dinâmicos</h1>
+
+    <label for="num-inputs">Número de Inputs:</label>
+    <input type="number" id="num-inputs" min="1" max="10" value="1">
+    <button onclick="criarInputs(document.getElementById('num-inputs').value)">Criar Inputs</button>
+
+    <div id="inputs-container"></div>
+</body>
+
+</html>
