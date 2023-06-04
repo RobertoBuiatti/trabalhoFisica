@@ -8,7 +8,7 @@ function criarInputs(numInputs) {
         input.id = `massa-${i}`;
         const label = document.createElement('Massa');
         label.for = `labeMassa-${i}`;
-        label.innerText = `Massa ${i + 1}`;
+        label.innerText = `Masa ${i + 1}`;
         container.appendChild(label);
         container.appendChild(input);
 
