@@ -9,11 +9,12 @@
 <body>
     <h1>Criar Inputs Dinâmicos</h1>
 
-    <label for="num-inputs">Número de Inputs:</label>
+    <label for="num-inputs">Número de Blocos:</label>
     <input type="number" id="num-inputs" min="1" max="10" value="1">
     <button onclick="criarInputs(document.getElementById('num-inputs').value)">Criar Inputs</button>
-
+    <button onclick="calcularForca()">Calcular Força</button>
     <div id="inputs-container"></div>
+
 </body>
 
 </html>
