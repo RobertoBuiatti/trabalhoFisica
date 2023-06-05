@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html>
-    <script src="scrypt.js"></script>
-
+<html lang="en">
+<script src="styles/scrypt.js"></script>
+<link rel="stylesheet" href="styles/style.css">
 <head>
     <title>Criar Inputs Dinâmicos</title>
 </head>
-
 <body>
-    <h1>Criar Inputs Dinâmicos</h1>
+    <div>
+        <h1>Qual calculo você deseja fazer?</h1>
+    </div>
 
-    <label for="num-inputs">Número de Blocos:</label>
-    <input type="number" id="num-inputs" min="1" max="10" value="1">
-    <button onclick="criarInputs(document.getElementById('num-inputs').value)">Criar Inputs</button>
-    <button onclick="calcularForca()">Calcular Força</button>
-    <div id="inputs-container"></div>
-
+    <div>
+        <a href="calculos/plano.html">Plano</a>
+    </div>
 </body>
 
 </html>
