@@ -22,10 +22,19 @@ function criarInputs(numInputs) {
         atritoInput.required = true;
         inputDiv.appendChild(atritoLabel);
         inputDiv.appendChild(atritoInput);
+        
+        const forcaAtritoLabel = document.createElement('label');
+        forcaAtritoLabel.textContent = 'Força de Atrito ' + (i + 1) + ': ';
+        const forcaAtritoInput = document.createElement('input');
+        forcaAtritoInput.type = 'number';
+        forcaAtritoInput.name = 'forcaAtrito' + i;
+        forcaAtritoInput.required = true;
+        inputDiv.appendChild(forcaAtritoLabel);
+        inputDiv.appendChild(forcaAtritoInput);
 
         if (i !== numInputs - 1) {
             const tensaoLabel = document.createElement('label');
-            tensaoLabel.textContent = 'Tensao ' + (i + 1) + ' e ' + (i + 2) + ': ';
+            tensaoLabel.textContent = 'Tensão ' + (i + 1) + ' e ' + (i + 2) + ': ';
             const tensaoInput = document.createElement('input');
             tensaoInput.type = 'number';
             tensaoInput.name = 'tensao' + i;
@@ -82,17 +91,20 @@ function calcularForca() {
     let massas = [];
     let atritos = [];
     let tensoes = [];
+    let forca_de_atrito_local = [];
     let forca_de_atrito_total = 0;
 
     for (let i = 0; i < numInputs; i++) {
         const massa = parseFloat(document.getElementsByName('massa' + i)[0].value);
         const atrito = parseFloat(document.getElementsByName('atrito' + i)[0].value);
+        const forcaAtrito = parseFloat(document.getElementsByName('forcaAtrito' + i)[0].value);
         if (i !== numInputs - 1) {
             const tensao = parseFloat(document.getElementsByName('tensao' + i)[0].value);
             tensoes.push(tensao);
         }
         massas.push(massa);
         atritos.push(atrito);
+        forca_de_atrito_local.push(forcaAtrito);
         forca_de_atrito_total += massa * atrito * gravidade;
     }
 
@@ -113,7 +125,7 @@ function calcularForca() {
             }
         }
     } else if (!isNaN(forca_dado)) {
-        let aceleracao = (forca_dado - forca_de_atrito_total) / massas.reduce((a, b) => a + b, 0)
+        let aceleracao = (forca_dado - forca_de_atrito_total) / massas.reduce((a, b) => a + b, 0);
         document.getElementsByName('aceleracao')[0].value = aceleracao;
         if (numInputs > tensoes.length) {
             for (let i = 1; i < numInputs - 1; i++) {
@@ -122,7 +134,7 @@ function calcularForca() {
                 tensoes.push(tensao);
             }
         }
-    } else if(tensoes !== []) {
+    } else if (tensoes.length !== 0) {
         let aceleracao = (tensoes[0] - (atritos[0] * massas[0] * gravidade)) / massas[0];
         document.getElementsByName('aceleracao')[0].value = aceleracao;
         let forca = (massas.reduce((a, b) => a + b, 0) * aceleracao) + forca_de_atrito_total;
@@ -134,7 +146,24 @@ function calcularForca() {
                 tensoes.push(tensao);
             }
         }
+        console.log("forca" + forca_de_atrito_local);
     }
 
+    // if (massas.length !== 0) {
+    //     if ((forca_de_atrito_local.length !== 0) && (!isNaN(gravidade))) {
+    //         for (let i = 0; i < numInputs; i++) {
+    //             let massa = forca_de_atrito_local[i] / (gravidade * atritos[i]);
+    //             document.getElementsByName('massa' + i)[0].value = massa;
+    //             massas.push(massa);
+    //         }
+    //     }
+    // }
 
+    if (forca_de_atrito_local.length !== 0) {
+        for (let i = 0; i < numInputs; i++) {
+            let forcaAtrito = massas[i] * atritos[i] * gravidade;
+            document.getElementsByName('forcaAtrito' + i)[0].value = forcaAtrito;
+            forca_de_atrito_local.push(forcaAtrito);
+        }
+    }
 }
