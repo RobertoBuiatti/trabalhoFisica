@@ -149,16 +149,6 @@ function calcularForca() {
         console.log("forca" + forca_de_atrito_local);
     }
 
-    // if (massas.length !== 0) {
-    //     if ((forca_de_atrito_local.length !== 0) && (!isNaN(gravidade))) {
-    //         for (let i = 0; i < numInputs; i++) {
-    //             let massa = forca_de_atrito_local[i] / (gravidade * atritos[i]);
-    //             document.getElementsByName('massa' + i)[0].value = massa;
-    //             massas.push(massa);
-    //         }
-    //     }
-    // }
-
     if (forca_de_atrito_local.length !== 0) {
         for (let i = 0; i < numInputs; i++) {
             let forcaAtrito = massas[i] * atritos[i] * gravidade;
@@ -167,3 +157,4 @@ function calcularForca() {
         }
     }
 }
+
