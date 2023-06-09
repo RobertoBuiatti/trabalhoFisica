@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quadrados Interligados</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <label for="numQuadrados">Número de Objetos no plano:</label>
+    <input type="number" id="numQuadrados" min="1" max="10" value="2">
+    <button onclick="criarInputs(document.getElementById('numQuadrados').value)">Criar Quadrados</button>
+    <button onclick="calcularForca(), criarQuadrados()">Calcular Força</button>
+    <div id="inputs-container"></div>
+
+    <div id="container"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
