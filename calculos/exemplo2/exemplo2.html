@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Roberto">
-    <title>Dois quadrados</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" type="text/css" href="exemplo2.css">
 </head>
 
 <body>
+    <a href="../../index.html">Voltar para a página anterior</a>
+    <h1>Calculadora de Fio</h1>
     <div>
-        <button onclick="criarInputs(2)">Criar Inputs</button>
-        <button onclick="calcularForca()">Calcular Força</button>
-        <div id="inputs-container"></div>
+        <label for="massa1">Massa do Corpo 1 (no plano):</label>
+        <input type="number" id="massa1">
     </div>
+    <div>
+        <label for="massa2">Massa do Corpo 2 (pendurado):</label>
+        <input type="number" id="massa2">
+    </div>
+    <div>
+        <label for="gravidade">Gravidade (m/s²):</label>
+        <input type="number" id="gravidade">
+    </div>
+    <button onclick="calcular()">Calcular</button>
+    <div id="resultado"></div>
+
     <script src="exemplo2.js"></script>
 </body>
+
+</html>
