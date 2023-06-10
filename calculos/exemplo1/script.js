@@ -14,7 +14,7 @@ class Quadrado {
     }
 
     calcularAceleracao() {
-        this.aceleracao;
+        this.aceleracao = (this.forca - this.forcaAtrito) / this.massa;
     }
 
     atualizarPosicao() {
@@ -45,11 +45,11 @@ function criarQuadrados() {
     const quadrados = [];
 
     for (let i = 0; i < numQuadrados; i++) {
-        const nomeQuadrado = i+1;
+        const nomeQuadrado = i+1; // Letras do alfabeto (A, B, C, ...)
         const quadrado = new Quadrado(nomeQuadrado, 1);
-        quadrado.forca = 100;
-        quadrado.tracao = 100;
-        quadrado.forcaAtrito = 100;
+        quadrado.forca = 10;
+        quadrado.tracao = Math.random() * 10 + 1;
+        quadrado.forcaAtrito = Math.random() * 5 + 1;
 
         const quadradoElement = document.createElement("div");
         quadradoElement.className = "quadrado";
@@ -94,6 +94,7 @@ function reposicionarFios() {
     }
 }
 
+
 function criarInputs(numQuadrados) {
     const container = document.getElementById('inputs-container');
     container.innerHTML = '';
@@ -118,7 +119,7 @@ function criarInputs(numQuadrados) {
         atritoInput.required = true;
         inputDiv.appendChild(atritoLabel);
         inputDiv.appendChild(atritoInput);
-        
+
         const forcaAtritoLabel = document.createElement('label');
         forcaAtritoLabel.textContent = 'Força de Atrito ' + (i + 1) + ': ';
         const forcaAtritoInput = document.createElement('input');
@@ -183,13 +184,13 @@ function calcularForca() {
     this.aceleracao = parseFloat(document.getElementsByName('aceleracao')[0].value);
     const gravidade = parseFloat(document.getElementsByName('gravidade')[0].value);
     const forca_dado = parseFloat(document.getElementsByName('forca')[0].value);
-    
+
     let massas = [];
     let atritos = [];
     let tensoes = [];
     let forca_de_atrito_local = [];
     let forca_de_atrito_total = 0;
-    
+
     for (let i = 0; i < numQuadrados; i++) {
         const massa = parseFloat(document.getElementsByName('massa' + i)[0].value);
         const atrito = parseFloat(document.getElementsByName('atrito' + i)[0].value);
@@ -244,7 +245,7 @@ function calcularForca() {
         }
         console.log("forca" + forca_de_atrito_local);
     }
-    
+
     if (forca_de_atrito_local.length !== 0) {
         for (let i = 0; i < numQuadrados; i++) {
             let forcaAtrito = massas[i] * atritos[i] * gravidade;
