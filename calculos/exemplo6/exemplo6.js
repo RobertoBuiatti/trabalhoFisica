@@ -22,7 +22,7 @@ function calcular() {
         var forcaBC = ((massa3 * aceleracao) + (coeficiente3 * massa3 * gravidade));
 
         var resultado = document.getElementById("resultado");
-        resultado.innerHTML = "Aceleração para a direita de: " + aceleracao.toFixed(2) + " m/s²<br>Força de A em B: " + forcaBA.toFixed(2) + " N<br>Força de B em C: " + forcaBC.toFixed(2) + " N<br>Valor mínimo para força aplicada para empurrar os blocos: " + forcaAtritoTotal.toFixed(2) + " N";
+        resultado.innerHTML = "Aceleração para a direita de: " + aceleracao.toFixed(2) + " m/s²<br>Força de A em B: " + forcaBA.toFixed(2) + " N<br>Força de B em C: " + forcaBC.toFixed(2) + " N<br>Força de atrito Corpo 1: " + forcaAtrito1.toFixed(2) + " N<br>Força de atrito Corpo 2: " + forcaAtrito2.toFixed(2) + " N<br>Força de atrito Corpo 3: " + forcaAtrito3.toFixed(2) + " N<br>Valor mínimo para força aplicada para empurrar os blocos: " + forcaAtritoTotal.toFixed(2) + " N";
     } else {
         var resultado = document.getElementById("resultado");
         resultado.innerHTML = "A força é menor que a força de atrito total, logo o movimento é impossivel.<br>Valor mínimo para força aplicada para empurrar os blocos: " + forcaAtritoTotal.toFixed(2) + " N";

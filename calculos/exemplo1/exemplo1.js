@@ -20,7 +20,7 @@ function calcular() {
         var tensao2 = (massa2 * aceleracao) + (forcaAtrito2)+tensao1;
         var tensao3 = (massa3 * aceleracao) + (forcaAtrito3)+tensao2;
         var resultado = document.getElementById("resultado");
-        resultado.innerHTML = "Aceleração para a esquerda de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão entre 1 e 2: " + tensao1.toFixed(2) + " N<br>Tensão entre 2 e 3: " + tensao2.toFixed(2) + " N<br>Valor mínimo para força aplicada para puxar o fio: " + forcaAtritoTotal.toFixed(2) + " N";
+        resultado.innerHTML = "Aceleração para a esquerda de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão entre 1 e 2: " + tensao1.toFixed(2) + " N<br>Tensão entre 2 e 3: " + tensao2.toFixed(2) + " N<br>Força de atrito Corpo 1: " + forcaAtrito1.toFixed(2) + " N<br>Força de atrito Corpo 2: " + forcaAtrito2.toFixed(2) + " N<br>Força de atrito Corpo 3: " + forcaAtrito3.toFixed(2) + " N<br>Valor mínimo para força aplicada para puxar o fio: " + forcaAtritoTotal.toFixed(2) + " N";
 
     } else {
         var resultado = document.getElementById("resultado");
