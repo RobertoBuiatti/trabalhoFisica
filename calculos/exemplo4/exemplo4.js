@@ -13,17 +13,27 @@ function calcular() {
     if ((pesoTangente) > (massa2 * gravidade)) {
         var aceleracao = ((pesoTangente) - (massa2 * gravidade)) / (massa1 + massa2);
         var tensao = (massa2 * aceleracao) + (massa2 * gravidade);
+
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Aceleração no sentido do peso tangente: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
+    }
+    else if (pesoTangente == massa2 * gravidade) {
+        var tensao = (massa2 * gravidade);
+        var aceleracao = 0;
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Aceleração: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
     }
     else {
         var aceleracao = ((massa2 * gravidade) - (pesoTangente)) / (massa1 + massa2);
         var tensao = (massa2 * gravidade) - (massa2 * aceleracao);
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Aceleração no sentido do peso pendurado: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
     }
 
 
 
     // Exibir o resultado
-    var resultado = document.getElementById("resultado");
-    resultado.innerHTML = "Aceleração: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
+
 }
 
 
