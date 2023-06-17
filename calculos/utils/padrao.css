@@ -62,8 +62,9 @@ body {
 }
 
 a {
-    color: #007bff;
+    color: #070707;
     text-decoration: none;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
