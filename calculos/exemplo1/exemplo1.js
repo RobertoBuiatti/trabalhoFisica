@@ -23,7 +23,7 @@ function calcular() {
 
     if (forca < forcaAtritoTotal) {
         var resultado = document.getElementById("resultado");
-        resultado.innerHTML = "A força é menor que a força de atrito total, logo o movimento é impossível.<br>Valor mínimo para força aplicada para puxar o fio: " + forcaAtritoTotal.toFixed(2) + " N";
+        resultado.innerHTML = "A força é menor que a força de atrito total, logo o movimento é impossível.<br>Valor mínimo para força aplicada para puxar o bloco: " + forcaAtritoTotal.toFixed(2) + " N";
         return;
     }
 
@@ -40,7 +40,7 @@ function calcular() {
             tensao1.toFixed(2) + " N<br>Tensão entre 2 e 3: " + tensao2.toFixed(2) +
             " N<br>Força de atrito Corpo 1: " + forcaAtrito1.toFixed(2) + " N<br>Força de atrito Corpo 2: " +
             "" + forcaAtrito2.toFixed(2) + " N<br>Força de atrito Corpo 3: " + forcaAtrito3.toFixed(2) +
-            " N<br>Valor mínimo para força aplicada para puxar o fio: " + forcaAtritoTotal.toFixed(2) +
+            " N<br>Valor mínimo para força aplicada para puxar o bloco: " + forcaAtritoTotal.toFixed(2) +
             " N<br>Para saber a velocidade e o deslocamento, insira um valor para o tempo.";
     } else {
         var resultado = document.getElementById("resultado");
@@ -48,7 +48,7 @@ function calcular() {
             tensao1.toFixed(2) + " N<br>Tensão entre 2 e 3: " + tensao2.toFixed(2) +
             " N<br>Força de atrito Corpo 1: " + forcaAtrito1.toFixed(2) + " N<br>Força de atrito Corpo 2: " +
             "" + forcaAtrito2.toFixed(2) + " N<br>Força de atrito Corpo 3: " +
-            forcaAtrito3.toFixed(2) + " N<br>Valor mínimo para força aplicada para puxar o fio: " +
+            forcaAtrito3.toFixed(2) + " N<br>Valor mínimo para força aplicada para puxar o bloco: " +
             forcaAtritoTotal.toFixed(2) + " N<br>Velocidade ao final do tempo passado: " +
             velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento ao final do tempo passado: " +
             deslocamento.toFixed(2) + " m";
