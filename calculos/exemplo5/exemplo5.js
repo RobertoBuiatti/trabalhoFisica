@@ -26,10 +26,7 @@ function calcular() {
         else if (tracaoInput == qntBlocosInput) {
             tensao = forcaInput;
         }
-        console.log(forcaInput);
-        console.log(massaDaTensao);
-        console.log(massaTotal);
-
+        
         if (!isNaN(tempo)) {
             var resultado = document.getElementById("resultado");
             resultado.innerHTML = "<br>Força de aceleração: " + aceleracao.toFixed(2) + " m/s²<br>Força de tensão no Bloco escolhido: " + tensao.toFixed(2) + " N<br>Velocidade final: " + velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento: " + deslocamento.toFixed(2) + " m";
