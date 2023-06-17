@@ -20,7 +20,14 @@ function calcular() {
                 var resultado = document.getElementById("resultado");
                 resultado.innerHTML = "Aceleração para a esquerda de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
             }
-        } else {
+        } 
+        else if (massa1 == massa2) {
+            var aceleracao = 0;
+            var tensao = massa2 * gravidade;
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "Aceleração: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N<br>Velocidade ao final do tempo passado: 0 m/s<br>Deslocamento ao final do tempo passado: 0 m";
+        }
+        else {
             var aceleracao = ((massa2 * gravidade) - (massa1 * gravidade)) / (massa1 + massa2);
             var tensao = (massa2 * gravidade) - (massa2 * aceleracao);
             var velocidadeFinal = aceleracao * tempo;
