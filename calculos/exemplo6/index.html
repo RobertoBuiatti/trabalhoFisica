@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="../utils/padrao.css">
+</head>
+
+<body>
+<div class="container">
+    <a href="../../index.html">Voltar para a página anterior</a>
+    <h1>Calculadora de Fio</h1>
+    <div class="form-group">
+        <label for="massa1">Massa do Corpo 1 (kg):</label>
+        <input type="number" id="massa1" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="coeficienteAtrito1">Coeficiênte de atrito 1:</label>
+        <input type="number" id="coeficienteAtrito1" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="massa2">Massa do Corpo 2 (kg):</label>
+        <input type="number" id="massa2" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="coeficienteAtrito2">Coeficiênte de atrito 2:</label>
+        <input type="number" id="coeficienteAtrito2" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="massa3">Massa do Corpo 3 (kg):</label>
+        <input type="number" id="massa3" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="coeficienteAtrito3">Coeficiênte de atrito 3:</label>
+        <input type="number" id="coeficienteAtrito3" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="Forca">Força aplicada nos Blocos (N):</label>
+        <input type="number" id="Forca" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="gravidade">Gravidade (m/s²):</label>
+        <input type="number" id="gravidade" class="input-field">
+    </div>
+    <div class="form-group">
+        <label for="Tempo">Tempo (segundos):</label>
+        <input type="number" id="Tempo" class="input-field">
+    </div>
+    <button onclick="calcular()" class="button">Calcular</button>
+    <div id="resultado"></div>
+</div>
+
+    <script src="exemplo6.js"></script>
+</body>
+
+</html>
