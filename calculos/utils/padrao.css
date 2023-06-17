@@ -5,6 +5,32 @@ body {
     padding: 0;
 }
 
+.navbar {
+    background-color: #007bff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.seta{
+    width: 23px;
+    height: 23px;
+}
+
+
 .container {
     max-width: 600px;
     margin: 0 auto;
