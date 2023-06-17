@@ -3,6 +3,7 @@ body {
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    background-image: url(../../imagens/fundo-da-física-7373836-749360594.jpg);
 }
 
 .navbar {
@@ -139,4 +140,8 @@ label {
 #resultado {
     margin-top: 20px;
     font-weight: bold;
+}
+
+.Imagens {
+    width: 100%;
 }

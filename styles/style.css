@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f5f5f5;
+    background-image: url(../imagens/fundo-da-física-7373836-749360594.jpg);
 }
 
 .container {
@@ -11,7 +12,7 @@ body {
 }
 
 h1 {
-    color: #333;
+    color: #fcf8f8;
 }
 
 .calc-item {
@@ -25,7 +26,7 @@ h1 {
 }
 
 .calc-item:hover {
-    cursor: ;
+    cursor: pointer;
     background-color: #a8a8a8;
 }
 
