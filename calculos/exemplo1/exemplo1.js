@@ -4,21 +4,21 @@ function calcular() {
     var massa2 = parseFloat(document.getElementById("massa2").value);
     var massa3 = parseFloat(document.getElementById("massa3").value);
     var coeficiente1 = parseFloat(document.getElementById("coeficienteAtrito1").value);
-    var coeficiente2 = parseFloat(document.getElementById("coeficienteAtrito2").value);
-    var coeficiente3 = parseFloat(document.getElementById("coeficienteAtrito3").value);
+    // var coeficiente2 = parseFloat(document.getElementById("coeficienteAtrito2").value);
+    // var coeficiente3 = parseFloat(document.getElementById("coeficienteAtrito3").value);
     var forca = parseFloat(document.getElementById("Forca").value);
     var gravidade = parseFloat(document.getElementById("gravidade").value);
     var tempo = parseFloat(document.getElementById("Tempo").value);
 
-    if (isNaN(massa1) || isNaN(massa2) || isNaN(massa3) || isNaN(coeficiente1) || isNaN(coeficiente2) || isNaN(coeficiente3) || isNaN(forca) || isNaN(gravidade)) {
+    if (isNaN(massa1) || isNaN(massa2) || isNaN(massa3) || isNaN(coeficiente1) || isNaN(forca) || isNaN(gravidade)) {
         var resultado = document.getElementById("resultado");
         resultado.innerHTML = "Preencha os campos das massas, dos coeficientes de atrito, da força e da gravidade com valores numéricos.";
         return;
     }
 
     var forcaAtrito1 = coeficiente1 * massa1 * gravidade;
-    var forcaAtrito2 = coeficiente2 * massa2 * gravidade;
-    var forcaAtrito3 = coeficiente3 * massa3 * gravidade;
+    var forcaAtrito2 = coeficiente1 * massa2 * gravidade;
+    var forcaAtrito3 = coeficiente1 * massa3 * gravidade;
     var forcaAtritoTotal = forcaAtrito1 + forcaAtrito2 + forcaAtrito3;
 
     if (forca < forcaAtritoTotal) {
