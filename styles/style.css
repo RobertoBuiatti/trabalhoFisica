@@ -3,7 +3,8 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f5f5f5;
-    background-image: url(../imagens/fundo-da-física-7373836-749360594.jpg);
+    background-image: url(../imagens/3663432.jpg);
+    background-size: cover;
 }
 
 .container {
