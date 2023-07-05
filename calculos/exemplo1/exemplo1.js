@@ -14,6 +14,10 @@ function calcular() {
         var resultado = document.getElementById("resultado");
         resultado.innerHTML = "Preencha os campos das massas, dos coeficientes de atrito, da força e da gravidade com valores numéricos.";
         return;
+    }else if (massa1 < 0 || massa2 < 0 || massa3 < 0 || coeficiente1 <= 0 || forca <= 0 || gravidade <= 0) {
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Preencha os campos das massas, dos coeficientes de atrito, da força e da gravidade com valores maiores que zero.";
+        return;
     }
 
     var forcaAtrito1 = coeficiente1 * massa1 * gravidade;

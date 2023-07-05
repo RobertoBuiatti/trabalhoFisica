@@ -10,6 +10,10 @@ function calcular() {
         var resultado = document.getElementById("resultado");
         resultado.innerHTML = "Preencha os campos das massas e da gravidade com valores numéricos!";
         return;
+    } else if(massa1 < 0 || massa2 < 0 || gravidade <= 0){
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Preencha os campos das massas e da gravidade com valores maiores que zero!";
+        return;
     }
 
     if (isNaN(tempo)) {
