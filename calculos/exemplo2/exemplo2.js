@@ -6,13 +6,13 @@ function calcular() {
     var tempo = parseFloat(document.getElementById("Tempo").value);
     var coeficiente1 = parseFloat(document.getElementById("coeficienteAtrito1").value);
 
-    if (isNaN(massa1) || isNaN(massa2) || isNaN(gravidade)) {
+    if (isNaN(massa1) || isNaN(massa2) || isNaN(gravidade) || isNaN(coeficiente1)) {
         var resultado = document.getElementById("resultado");
         resultado.innerHTML = "Preencha os campos das massas e da gravidade com valores numéricos!";
         return;
-    } else if(massa1 < 0 || massa2 < 0 || coeficiente1 <= 0 || gravidade <= 0){
+    } else if(massa1 <= 0 || massa2 <= 0 || coeficiente1 < 0 || gravidade < 0){
         var resultado = document.getElementById("resultado");
-        resultado.innerHTML = "Preencha os campos das massas e da gravidade com valores maiores que zero!";
+        resultado.innerHTML = "Preencha os campos das massas, coeficiente de atrito e da gravidade com valores maiores que zero!";
         return;
     }
 
