@@ -7,6 +7,17 @@ function calcular() {
     var tracaoInput = parseFloat(document.getElementById("TracaoN").value);
     var tempo = parseFloat(document.getElementById("Tempo").value);
 
+    if (isNaN(massaInput) || isNaN(forcaInput) || isNaN(razaoInput) || isNaN(qntBlocosInput) || isNaN(tracaoInput)) {
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Preencha os campos da massa, da razão, da quantidade de blocos, da força e do fio escolhido para ver a tração com valores numéricos!";
+        return;
+    } else if(massaInput <= 0 || forcaInput < 0 || razaoInput < 0 || qntBlocosInput <= 0 || tracaoInput < 0){
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Preencha campos das massas, do algulo, da gravidade e do coeficiente de atrito com valores maiores que zero!";
+        return;
+    }
+
+
     if (!isNaN(massaInput) && !isNaN(forcaInput) && !isNaN(razaoInput) && !isNaN(qntBlocosInput) && !isNaN(tracaoInput)) {
         var massaN = massaInput + (qntBlocosInput - 1) * razaoInput; // massa ultimo bloco
         var massaTotal = qntBlocosInput * (massaInput + massaN) / 2; // massa total dos blocos
@@ -27,7 +38,7 @@ function calcular() {
             tensao = forcaInput;
         }
         
-        if (!isNaN(tempo)) {
+        if (!isNaN(tempo) && tempo >= 0) {
             var resultado = document.getElementById("resultado");
             resultado.innerHTML = "<br>Força de aceleração: " + aceleracao.toFixed(2) + " m/s²<br>Força de tensão no Bloco escolhido: " + tensao.toFixed(2) + " N<br>Velocidade final: " + velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento: " + deslocamento.toFixed(2) + " m";
         }

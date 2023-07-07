@@ -5,6 +5,16 @@ function calcular() {
     var gravidade = parseFloat(document.getElementById("gravidade").value);
     var tempo = parseFloat(document.getElementById("Tempo").value);
 
+    if (isNaN(massa1) || isNaN(massa2) || isNaN(gravidade)) {
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Preencha os campos das massas e da gravidade com valores numéricos!";
+        return;
+    } else if(massa1 < 0 || massa2 < 0 || gravidade <= 0 ){
+        var resultado = document.getElementById("resultado");
+        resultado.innerHTML = "Preencha os campos das massas e da gravidade com valores maiores que zero!";
+        return;
+    }
+
     if (!isNaN(massa1) && !isNaN(massa2) && !isNaN(gravidade)) {
         // Calcular a aceleração
         if (massa1 > massa2) {
@@ -12,13 +22,13 @@ function calcular() {
             var tensao = (massa2 * aceleracao) + (massa2 * gravidade);
             var velocidadeFinal = aceleracao * tempo;
             var deslocamento = (aceleracao * (tempo * tempo)) / 2;
-            if (!isNaN(tempo)) {
+            if (!isNaN(tempo)&& tempo >= 0) {
                 var resultado = document.getElementById("resultado");
-                resultado.innerHTML = "Aceleração para a esquerda de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N<br>Velocidade ao final do tempo passado: " + velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento ao final do tempo passado: " + deslocamento.toFixed(2) + " m";
+                resultado.innerHTML = "Aceleração com o bloco da esquerda descendo a: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N<br>Velocidade ao final do tempo passado: " + velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento ao final do tempo passado: " + deslocamento.toFixed(2) + " m";
             }
             else {
                 var resultado = document.getElementById("resultado");
-                resultado.innerHTML = "Aceleração para a esquerda de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
+                resultado.innerHTML = "Aceleração com o bloco da esquerda descendo a: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
             }
         } 
         else if (massa1 == massa2) {
@@ -34,11 +44,11 @@ function calcular() {
             var deslocamento = (aceleracao * (tempo * tempo)) / 2;
             if (!isNaN(tempo)) {
                 var resultado = document.getElementById("resultado");
-                resultado.innerHTML = "Aceleração para a direita de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N<br>Velocidade ao final do tempo passado: " + velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento ao final do tempo passado: " + deslocamento.toFixed(2) + " m";
+                resultado.innerHTML = "Aceleração com o bloco da direita descendo a: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N<br>Velocidade ao final do tempo passado: " + velocidadeFinal.toFixed(2) + " m/s<br>Deslocamento ao final do tempo passado: " + deslocamento.toFixed(2) + " m";
             }
             else {
                 var resultado = document.getElementById("resultado");
-                resultado.innerHTML = "Aceleração para a direita de: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
+                resultado.innerHTML = "Aceleração com o bloco da direita descendo a: " + aceleracao.toFixed(2) + " m/s²<br>Tensão do Fio: " + tensao.toFixed(2) + " N";
             }
         }
     }
